@@ -13,12 +13,12 @@ return [
             ],
         ],
     ],
-    'zf-versioning' => [
+    'api-tools-versioning' => [
         'uri' => [
             0 => 'test-api.rest.doctrine.user',
         ],
     ],
-    'zf-rest' => [
+    'api-tools-rest' => [
         'TestApi\\V1\\Rest\\User\\Controller' => [
             'listener' => \TestApi\V1\Rest\User\UserResource::class,
             'route_name' => 'test-api.rest.doctrine.user',
@@ -43,7 +43,7 @@ return [
             'service_name' => 'User',
         ],
     ],
-    'zf-content-negotiation' => [
+    'api-tools-content-negotiation' => [
         'controllers' => [
             'TestApi\\V1\\Rest\\User\\Controller' => 'HalJson',
         ],
@@ -61,7 +61,7 @@ return [
             ],
         ],
     ],
-    'zf-hal' => [
+    'api-tools-hal' => [
         'metadata_map' => [
             \ZFTest\OAuth2\Doctrine\Identity\Entity\User::class => [
                 'route_identifier_name' => 'user_id',
@@ -76,7 +76,7 @@ return [
             ],
         ],
     ],
-    'zf-apigility' => [
+    'laminas-api-tools' => [
         'doctrine-connected' => [
             \TestApi\V1\Rest\User\UserResource::class => [
                 'object_manager' => 'doctrine.entitymanager.orm_default',
@@ -93,7 +93,7 @@ return [
             'use_generated_hydrator' => true,
         ],
     ],
-    'zf-content-validation' => [
+    'api-tools-content-validation' => [
         'TestApi\\V1\\Rest\\User\\Controller' => [
             'input_filter' => 'TestApi\\V1\\Rest\\User\\Validator',
         ],

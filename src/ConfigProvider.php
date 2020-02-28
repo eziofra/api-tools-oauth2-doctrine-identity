@@ -1,6 +1,6 @@
 <?php
 
-namespace ZF\OAuth2\Doctrine\Identity;
+namespace Laminas\ApiTools\OAuth2\Doctrine\Identity;
 
 class ConfigProvider
 {

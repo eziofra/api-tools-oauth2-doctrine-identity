@@ -1,10 +1,10 @@
 <?php
 
-namespace ZF\OAuth2\Doctrine\Identity;
+namespace Laminas\ApiTools\OAuth2\Doctrine\Identity;
 
-use Zend\Mvc\ModuleRouteListener;
-use ZF\MvcAuth\MvcAuthEvent;
-use Zend\Mvc\MvcEvent;
+use Laminas\Mvc\ModuleRouteListener;
+use Laminas\ApiTools\MvcAuth\MvcAuthEvent;
+use Laminas\Mvc\MvcEvent;
 
 class Module
 {
@@ -25,7 +25,7 @@ class Module
     public function getAutoloaderConfig()
     {
         return [
-            'Zend\Loader\StandardAutoloader' => [
+            'Laminas\Loader\StandardAutoloader' => [
                 'namespaces' => [
                     __NAMESPACE__ => __DIR__,
                 ],

@@ -1,12 +1,12 @@
 <?php
 
 /**
- * The user entity is always stored in another namespace than ZF\OAuth2
+ * The user entity is always stored in another namespace than Laminas\ApiTools\OAuth2
  */
 $userEntity = 'ZFTest\OAuth2\Doctrine\Identity\Entity\User';
 
 return [
-    'zf-oauth2-doctrine' => [
+    'api-tools-oauth2-doctrine' => [
         'default' => [
             'object_manager' => 'doctrine.entitymanager.orm_default',
             'event_manager' => 'doctrine.eventmanager.orm_default',
@@ -21,7 +21,7 @@ return [
                     'field' => 'user',
                 ],
                 'client_entity' => [
-                    'entity' => 'ZF\OAuth2\Doctrine\Entity\Client',
+                    'entity' => 'Laminas\ApiTools\OAuth2\Doctrine\Entity\Client',
                     'field' => 'client',
                     'additional_mapping_data' => [
                         'joinColumns' => [
@@ -32,7 +32,7 @@ return [
                     ],
                 ],
                 'access_token_entity' => [
-                    'entity' => 'ZF\OAuth2\Doctrine\Entity\AccessToken',
+                    'entity' => 'Laminas\ApiTools\OAuth2\Doctrine\Entity\AccessToken',
                     'field' => 'accessToken',
                     'additional_mapping_data' => [
                         'joinColumns' => [
@@ -43,7 +43,7 @@ return [
                     ],
                 ],
                 'authorization_code_entity' => [
-                    'entity' => 'ZF\OAuth2\Doctrine\Entity\AuthorizationCode',
+                    'entity' => 'Laminas\ApiTools\OAuth2\Doctrine\Entity\AuthorizationCode',
                     'field' => 'authorizationCode',
                     'additional_mapping_data' => [
                         'joinColumns' => [
@@ -54,7 +54,7 @@ return [
                     ],
                 ],
                 'refresh_token_entity' => [
-                    'entity' => 'ZF\OAuth2\Doctrine\Entity\RefreshToken',
+                    'entity' => 'Laminas\ApiTools\OAuth2\Doctrine\Entity\RefreshToken',
                     'field' => 'refreshToken',
                     'additional_mapping_data' => [
                         'joinColumns' => [
@@ -88,7 +88,7 @@ return [
                 ],
 
                 'Client' => [
-                    'entity' => 'ZF\OAuth2\Doctrine\Entity\Client',
+                    'entity' => 'Laminas\ApiTools\OAuth2\Doctrine\Entity\Client',
                     'mapping' => [
                         'client_id' => [
                             'type' => 'field',
@@ -113,7 +113,7 @@ return [
                         'scope' => [
                             'type' => 'collection',
                             'name' => 'scope',
-                            'entity' => 'ZF\OAuth2\Doctrine\Entity\Scope',
+                            'entity' => 'Laminas\ApiTools\OAuth2\Doctrine\Entity\Scope',
                             'mapper' => 'Scope',
                         ],
                         'user_id' => [
@@ -128,7 +128,7 @@ return [
                 ],
 
                 'AccessToken' => [
-                    'entity' => 'ZF\OAuth2\Doctrine\Entity\AccessToken',
+                    'entity' => 'Laminas\ApiTools\OAuth2\Doctrine\Entity\AccessToken',
                     'mapping' => [
                         'access_token' => [
                             'type' => 'field',
@@ -143,14 +143,14 @@ return [
                         'scope' => [
                             'type' => 'collection',
                             'name' => 'scope',
-                            'entity' => 'ZF\OAuth2\Doctrine\Entity\Scope',
+                            'entity' => 'Laminas\ApiTools\OAuth2\Doctrine\Entity\Scope',
                             'mapper' => 'Scope',
                         ],
                         'client_id' => [
                             'type' => 'relation',
                             'name' => 'client',
                             'entity_field_name' => 'clientId',
-                            'entity' => 'ZF\OAuth2\Doctrine\Entity\Client',
+                            'entity' => 'Laminas\ApiTools\OAuth2\Doctrine\Entity\Client',
                             'datatype' => 'bigint',
                         ],
                         'user_id' => [
@@ -165,7 +165,7 @@ return [
                 ],
 
                 'RefreshToken' => [
-                    'entity' => 'ZF\OAuth2\Doctrine\Entity\RefreshToken',
+                    'entity' => 'Laminas\ApiTools\OAuth2\Doctrine\Entity\RefreshToken',
                     'mapping' => [
                         'refresh_token' => [
                             'type' => 'field',
@@ -180,14 +180,14 @@ return [
                         'scope' => [
                             'type' => 'collection',
                             'name' => 'scope',
-                            'entity' => 'ZF\OAuth2\Doctrine\Entity\Scope',
+                            'entity' => 'Laminas\ApiTools\OAuth2\Doctrine\Entity\Scope',
                             'mapper' => 'Scope',
                         ],
                         'client_id' => [
                             'type' => 'relation',
                             'name' => 'client',
                             'entity_field_name' => 'clientId',
-                            'entity' => 'ZF\OAuth2\Doctrine\Entity\Client',
+                            'entity' => 'Laminas\ApiTools\OAuth2\Doctrine\Entity\Client',
                             'datatype' => 'bigint',
                         ],
                         'user_id' => [
@@ -202,7 +202,7 @@ return [
                 ],
 
                 'AuthorizationCode' => [
-                    'entity' => 'ZF\OAuth2\Doctrine\Entity\AuthorizationCode',
+                    'entity' => 'Laminas\ApiTools\OAuth2\Doctrine\Entity\AuthorizationCode',
                     'mapping' => [
                         'authorization_code' => [
                             'type' => 'field',
@@ -222,7 +222,7 @@ return [
                         'scope' => [
                             'type' => 'collection',
                             'name' => 'scope',
-                            'entity' => 'ZF\OAuth2\Doctrine\Entity\Scope',
+                            'entity' => 'Laminas\ApiTools\OAuth2\Doctrine\Entity\Scope',
                             'mapper' => 'Scope',
                         ],
                         'id_token' => [
@@ -234,7 +234,7 @@ return [
                             'type' => 'relation',
                             'name' => 'client',
                             'entity_field_name' => 'clientId',
-                            'entity' => 'ZF\OAuth2\Doctrine\Entity\Client',
+                            'entity' => 'Laminas\ApiTools\OAuth2\Doctrine\Entity\Client',
                             'datatype' => 'bigint',
                         ],
                         'user_id' => [
@@ -249,7 +249,7 @@ return [
                 ],
 
                 'Jwt' => [
-                    'entity' => 'ZF\OAuth2\Doctrine\Entity\Jwt',
+                    'entity' => 'Laminas\ApiTools\OAuth2\Doctrine\Entity\Jwt',
                     'mapping' => [
                         'subject' => [
                             'type' => 'field',
@@ -265,14 +265,14 @@ return [
                             'type' => 'relation',
                             'name' => 'client',
                             'entity_field_name' => 'clientId',
-                            'entity' => 'ZF\OAuth2\Doctrine\Entity\Client',
+                            'entity' => 'Laminas\ApiTools\OAuth2\Doctrine\Entity\Client',
                             'datatype' => 'bigint',
                         ],
                     ],
                 ],
 
                 'Jti' => [
-                    'entity' => 'ZF\OAuth2\Doctrine\Entity\Jti',
+                    'entity' => 'Laminas\ApiTools\OAuth2\Doctrine\Entity\Jti',
                     'mapping' => [
                         'subject' => [
                             'type' => 'field',
@@ -298,14 +298,14 @@ return [
                             'type' => 'relation',
                             'name' => 'client',
                             'entity_field_name' => 'clientId',
-                            'entity' => 'ZF\OAuth2\Doctrine\Entity\Client',
+                            'entity' => 'Laminas\ApiTools\OAuth2\Doctrine\Entity\Client',
                             'datatype' => 'bigint',
                         ],
                     ],
                 ],
 
                 'Scope' => [
-                    'entity' => 'ZF\OAuth2\Doctrine\Entity\Scope',
+                    'entity' => 'Laminas\ApiTools\OAuth2\Doctrine\Entity\Scope',
                     'mapping' => [
                         'scope' => [
                             'type' => 'field',
@@ -321,14 +321,14 @@ return [
                             'type' => 'relation',
                             'name' => 'client',
                             'entity_field_name' => 'clientId',
-                            'entity' => 'ZF\OAuth2\Doctrine\Entity\Client',
+                            'entity' => 'Laminas\ApiTools\OAuth2\Doctrine\Entity\Client',
                             'datatype' => 'bigint',
                         ],
                     ],
                 ],
 
                 'PublicKey' => [
-                    'entity' => 'ZF\OAuth2\Doctrine\Entity\PublicKey',
+                    'entity' => 'Laminas\ApiTools\OAuth2\Doctrine\Entity\PublicKey',
                     'mapping' => [
                         'public_key' => [
                             'type' => 'field',
@@ -349,7 +349,7 @@ return [
                             'type' => 'relation',
                             'name' => 'client',
                             'entity_field_name' => 'clientId',
-                            'entity' => 'ZF\OAuth2\Doctrine\Entity\Client',
+                            'entity' => 'Laminas\ApiTools\OAuth2\Doctrine\Entity\Client',
                             'datatype' => 'bigint',
                         ],
                     ],

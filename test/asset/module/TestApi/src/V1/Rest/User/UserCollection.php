@@ -1,7 +1,7 @@
 <?php
 namespace TestApi\V1\Rest\User;
 
-use Zend\Paginator\Paginator;
+use Laminas\Paginator\Paginator;
 
 class UserCollection extends Paginator
 {

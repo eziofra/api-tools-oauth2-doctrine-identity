@@ -1,12 +1,12 @@
 {
-    "name": "api-skeletons/zf-oauth2-doctrine-identity",
+    "name": "eziofra/api-tools-oauth2-doctrine-identity",
     "description": "Doctrine Enabled AuthenticatedIdentity",
     "type": "library",
     "license": "MIT",
     "keywords": [
         "oauth2",
         "doctrine",
-        "apigility",
+        "api-tools",
         "identity"
     ],
     "authors": [
@@ -15,27 +15,38 @@
             "email": "tom.h.anderson@gmail.com"
         }
     ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/eziofra/api-tools-oauth2-doctrine"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/eziofra/api-tools-oauth2-doctrine-identity"
+        }
+    ],
     "require": {
         "php": "^7.1",
         "container-interop/container-interop": "^1.1",
-        "api-skeletons/zf-oauth2-doctrine": "^3.1",
+        "eziofra/api-tools-oauth2-doctrine": "^3.1",
         "bshaffer/oauth2-server-php": "^1.10",
-        "gianarb/angry": "^0.1"
+        "gianarb/angry": "^0.1",
+        "laminas/laminas-dependency-plugin": "^1.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^5.7",
         "satooshi/php-coveralls": "^1.0",
-        "zendframework/zend-test": "^3.0",
-        "zfcampus/zf-apigility": "^1.3",
-        "zfcampus/zf-apigility-doctrine": "^2.1",
-        "zendframework/zend-i18n": "^2.7",
-        "zendframework/zend-hydrator": "^2.2",
+        "laminas/laminas-test": "^3.0",
+        "laminas-api-tools/api-tools": "^1.3",
+        "laminas-api-tools/api-tools-doctrine": "^2.1",
+        "laminas/laminas-i18n": "^2.7",
+        "laminas/laminas-hydrator": "^2.2",
         "api-skeletons/coding-standard": "^1.0",
         "phpro/zf-doctrine-hydration-module": "^2.0 || ^3.0"
     },
     "autoload": {
         "psr-4": {
-            "ZF\\OAuth2\\Doctrine\\Identity\\": "src/"
+            "Laminas\\ApiTools\\OAuth2\\Doctrine\\Identity\\": "src/"
         }
     },
     "autoload-dev": {
@@ -45,8 +56,8 @@
     },
     "extra": {
         "zf": {
-            "component": "ZF\\OAuth2\\Doctrine\\Identity",
-            "config-provider": "ZF\\OAuth2\\Doctrine\\ConfigProvider"
+            "component": "Laminas\\ApiTools\\OAuth2\\Doctrine\\Identity",
+            "config-provider": "Laminas\\ApiTools\\OAuth2\\Doctrine\\ConfigProvider"
         }
     }
 }

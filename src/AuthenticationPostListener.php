@@ -1,12 +1,12 @@
 <?php
 
-namespace ZF\OAuth2\Doctrine\Identity;
+namespace Laminas\ApiTools\OAuth2\Doctrine\Identity;
 
 use Interop\Container\ContainerInterface;
-use ZF\MvcAuth\MvcAuthEvent;
-use ZF\MvcAuth\Identity\AuthenticatedIdentity as MvcAuthAuthenticatedIdentity;
-use ZF\OAuth2\Doctrine\Identity\AuthenticatedIdentity as DoctrineAuthenticatedIdentity;
-use ZF\OAuth2\Doctrine\Identity\AccessTokenException;
+use Laminas\ApiTools\MvcAuth\MvcAuthEvent;
+use Laminas\ApiTools\MvcAuth\Identity\AuthenticatedIdentity as MvcAuthAuthenticatedIdentity;
+use Laminas\ApiTools\OAuth2\Doctrine\Identity\AuthenticatedIdentity as DoctrineAuthenticatedIdentity;
+use Laminas\ApiTools\OAuth2\Doctrine\Identity\AccessTokenException;
 use GianArb\Angry\Unclonable;
 use GianArb\Angry\Unserializable;
 
@@ -39,7 +39,7 @@ class AuthenticationPostListener
             $accessToken,
             $mvcAuthEvent->getAuthorizationService()
         );
-        $mvcAuthEvent->getMvcEvent()->setParam('ZF\MvcAuth\Identity', $doctrineAuthenticatedIdentity);
+        $mvcAuthEvent->getMvcEvent()->setParam('Laminas\ApiTools\MvcAuth\Identity', $doctrineAuthenticatedIdentity);
         $mvcAuthEvent->setIdentity($doctrineAuthenticatedIdentity);
     }
 
@@ -48,7 +48,7 @@ class AuthenticationPostListener
     {
         $config = $this->container->get('config');
 
-        foreach ($config['zf-oauth2-doctrine'] as $oauth2Config) {
+        foreach ($config['api-tools-oauth2-doctrine'] as $oauth2Config) {
             if (array_key_exists('object_manager', $oauth2Config)) {
                 $objectManager = $this->container->get($oauth2Config['object_manager']);
                 $accessTokenRepository = $objectManager

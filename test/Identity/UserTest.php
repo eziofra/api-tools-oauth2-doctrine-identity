@@ -2,7 +2,7 @@
 
 namespace ZFTest\OAuth2\Doctrine\Identity;
 
-use Zend\Stdlib\Request;
+use Laminas\Stdlib\Request;
 
 class UserTest extends AbstractTest
 {
@@ -41,19 +41,19 @@ class UserTest extends AbstractTest
         $authorization = $serviceManager->get('authentication');
         $identity = $authorization->getIdentity();
 
-        $this->assertTrue($identity instanceof \ZF\OAuth2\Doctrine\Identity\AuthenticatedIdentity);
+        $this->assertTrue($identity instanceof \Laminas\ApiTools\OAuth2\Doctrine\Identity\AuthenticatedIdentity);
         $this->assertTrue($identity->getUser() instanceof \ZFTest\OAuth2\Doctrine\Identity\Entity\User);
-        $this->assertTrue($identity->getClient() instanceof \ZF\OAuth2\Doctrine\Entity\Client);
-        $this->assertTrue($identity->getAccessToken() instanceof \ZF\OAuth2\Doctrine\Entity\AccessToken);
+        $this->assertTrue($identity->getClient() instanceof \Laminas\ApiTools\OAuth2\Doctrine\Entity\Client);
+        $this->assertTrue($identity->getAccessToken() instanceof \Laminas\ApiTools\OAuth2\Doctrine\Entity\AccessToken);
         $this->assertTrue(
-            $identity->getAuthorizationService() instanceof \ZF\MvcAuth\Authorization\AuthorizationInterface
+            $identity->getAuthorizationService() instanceof \Laminas\ApiTools\MvcAuth\Authorization\AuthorizationInterface
         );
         $this->assertEquals('doctrine', $identity->getRoleId());
         $this->assertTrue(is_array($identity->getAuthenticationIdentity()));
     }
 
     /**
-     * @expectedE xception ZF\OAuth2\Doctrine\Permissions\Acl\Exception\AccessTokenException
+     * @expectedE xception Laminas\ApiTools\OAuth2\Doctrine\Permissions\Acl\Exception\AccessTokenException
      */
     public function testInvalidAccessToken()
     {

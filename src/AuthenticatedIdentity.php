@@ -1,12 +1,12 @@
 <?php
 
-namespace ZF\OAuth2\Doctrine\Identity;
+namespace Laminas\ApiTools\OAuth2\Doctrine\Identity;
 
-use ZF\MvcAuth\Identity\IdentityInterface;
-use ZF\MvcAuth\Authorization\AuthorizationInterface;
-use Zend\Permissions\Rbac\Role as RbacRole;
-use Zend\Permissions\Acl\Acl;
-use ZF\OAuth2\Doctrine\Identity\Exception;
+use Laminas\ApiTools\MvcAuth\Identity\IdentityInterface;
+use Laminas\ApiTools\MvcAuth\Authorization\AuthorizationInterface;
+use Laminas\Permissions\Rbac\Role as RbacRole;
+use Laminas\Permissions\Acl\Acl;
+use Laminas\ApiTools\OAuth2\Doctrine\Identity\Exception;
 use GianArb\Angry\Uninvokable;
 
 class AuthenticatedIdentity extends RbacRole implements
@@ -60,7 +60,7 @@ class AuthenticatedIdentity extends RbacRole implements
         return $this->getName();
     }
 
-    // For ZF\OAuth2\Provider\UserId\AuthenticationService
+    // For Laminas\ApiTools\OAuth2\Provider\UserId\AuthenticationService
     public function getId()
     {
         return $this->getUser()->getId();
